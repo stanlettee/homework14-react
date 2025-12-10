@@ -31,4 +31,10 @@ export default class Searchbar extends Component {
             </header>
         )
     }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.search !== this.props.search){
+            this.props.loadSet()
+        }
+    }
 }
